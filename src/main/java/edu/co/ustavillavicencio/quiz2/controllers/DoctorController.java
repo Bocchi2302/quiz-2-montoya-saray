@@ -22,7 +22,10 @@ public class DoctorController {
     public ResponseEntity<DoctorResponse> create(@Valid @RequestBody DoctorCreateRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(doctorService.create(request));
     }
-
+    @GetMapping("/count")
+    public ResponseEntity<Long> count() {
+        return ResponseEntity.ok(doctorService.count());
+    }
     @GetMapping
     public ResponseEntity<List<DoctorResponse>> findAll() {
         return ResponseEntity.ok(doctorService.findAll());

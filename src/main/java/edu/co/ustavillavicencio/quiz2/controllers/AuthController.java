@@ -20,7 +20,7 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<String> signup(@Valid @RequestBody SignupRequest request) {
         authService.signup(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body("Usuario registrado correctamente");
+        return ResponseEntity.status(HttpStatus.CREATED).body("Usuario registrado exitosamente");
     }
 
     @PostMapping("/login")

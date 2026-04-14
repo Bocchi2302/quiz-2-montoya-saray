@@ -62,7 +62,7 @@ public class GlobalExceptionHandler {
                 .timestamp(LocalDateTime.now())
                 .status(HttpStatus.FORBIDDEN.value())
                 .error(HttpStatus.FORBIDDEN.getReasonPhrase())
-                .message("No tienes permisos para acceder a este recurso")
+                .message("No tienes permisos para acceder a este endpoint")
                 .path(request.getRequestURI())
                 .details(List.of(ex.getClass().getSimpleName()))
                 .build());
@@ -74,7 +74,7 @@ public class GlobalExceptionHandler {
                 .timestamp(LocalDateTime.now())
                 .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
                 .error(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase())
-                .message("Ocurrió un error interno inesperado")
+                .message("Ocurrió un error interno inesperado en el servidor")
                 .path(request.getRequestURI())
                 .details(List.of(ex.getClass().getSimpleName()))
                 .build());
