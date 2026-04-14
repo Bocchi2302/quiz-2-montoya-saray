@@ -54,7 +54,9 @@ public class DoctorService {
                 .map(this::toResponse)
                 .toList();
     }
-
+    public long count() {
+        return doctorRepository.count();
+    }
     public DoctorResponse findById(Long id) {
         Doctor doctor = doctorRepository.findById(id)
                 .orElseThrow(() -> new BusinessRuleException("Doctor no encontrado"));
